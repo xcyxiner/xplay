@@ -19,6 +19,9 @@ LDFLAGS = -lavformat -lavcodec -lavutil -lswscale -lswresample -lm -lstdc++  # æ
 
 all: $(TARGET)
 
+get-exec-name:
+	@echo $(TARGET)
+
 $(TARGET): $(OBJS) | copy_resources
 	@$(MKDIR) $(dir $@)
 	$(CC) $^ -o $@ $(LDFLAGS)
